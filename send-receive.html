@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('send-receive',{
         category: 'virtual communication',
-        color: '#FF8C00',
+        color: '#FFFF00',
         defaults: {
             name:{ value: "" },
             message_send:{ value:"" },
@@ -14,9 +14,9 @@
         },
         inputs:1,
         outputs:1,
-        icon: "font-awesome/fa-bars",
-        label: function() { return this.name || "send-receive" },
-        paletteLabel: "send_receive",
+        icon: "./icons/Send RSV.svg",
+        label: function() { return this.name || "Send Receive" },
+        paletteLabel: "Send Receive",
         oneditprepare: function() {
             var ports = []
             var self = this
