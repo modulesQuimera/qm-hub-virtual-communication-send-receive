@@ -11,14 +11,36 @@ module.exports = function(RED) {
         this.port_send = config.port_send
         this.port_receive = config.port_receive
         this.timeout = config.timeout
-        // this.websocket = config.websocket
-        // this.websocketConfig = RED.nodes.getNode(this.websocket);
+        this.compare_select = config.compare_select;
+        this.equalTo = config.equalTo;
+        this.different = config.different;
         var node = this
         mapeamentoNode = RED.nodes.getNode(this.mapeamento);
         
         node.on('input', function(msg, send, done) {
+            var _compare = {};
+            // if (node.compare_select == "equalTo") {
+            //     _compare = {
+            //         voltage_value: {"==": (!isNaN(parseFloat(node.equalTo)))? parseFloat(node.equalTo):node.equalTo }
+            //     }
+            // }
+            if (node.compare_select == "equal") {
+                _compare = {
+                    message_received: {"==": node.equalTo}
+                }
+            }
+            if (node.compare_select == "different") {
+                _compare = {
+                    message_received: {"!=": node.different}
+                }
+            }
+            // if (node.compare_select == "minValue") {
+            //     _compare = {
+            //         voltage_value: {">=": parseFloat(node.minValue), "<=": null}
+            //     }
+            // }
+
             var globalContext = node.context().global;
-            // var exportMode = globalContext.get("exportMode");
             var currentMode = globalContext.get("currentMode");
             var command = {
                 type: "communication_modular_V1.0",
@@ -27,7 +49,9 @@ module.exports = function(RED) {
                 port_send: node.port_send,
                 port_receive: node.port_receive,
                 timeout: parseInt(node.timeout),
-                message_send: node.message_send
+                message_send: node.message_send,
+                compare: _compare,
+                exit_timeout:{"==": false}
             }
             var file = globalContext.get("exportFile")
             var slot = globalContext.get("slot");
@@ -36,6 +60,7 @@ module.exports = function(RED) {
             globalContext.set("exportFile", file);
             node.status({fill:"green", shape:"dot", text:"done"}); // seta o status pra waiting
             // msg.payload = command
+            console.log(command)
             send(msg)
         });
     }
