@@ -2,7 +2,6 @@ module.exports = function(RED) {
 
     "use strict";
     var mapeamentoNode;
-    // var WebSocket = require("ws")
 
     function sendReceiveNode(config) {
         RED.nodes.createNode(this, config);
@@ -19,11 +18,7 @@ module.exports = function(RED) {
         
         node.on('input', function(msg, send, done) {
             var _compare = {};
-            // if (node.compare_select == "equalTo") {
-            //     _compare = {
-            //         voltage_value: {"==": (!isNaN(parseFloat(node.equalTo)))? parseFloat(node.equalTo):node.equalTo }
-            //     }
-            // }
+
             if (node.compare_select == "equal") {
                 _compare = {
                     message_received: {"==": node.equalTo}
@@ -34,11 +29,6 @@ module.exports = function(RED) {
                     message_received: {"!=": node.different}
                 }
             }
-            // if (node.compare_select == "minValue") {
-            //     _compare = {
-            //         voltage_value: {">=": parseFloat(node.minValue), "<=": null}
-            //     }
-            // }
 
             var globalContext = node.context().global;
             var currentMode = globalContext.get("currentMode");
@@ -59,7 +49,6 @@ module.exports = function(RED) {
             else{file.slots[slot].jig_error.push(command)}
             globalContext.set("exportFile", file);
             node.status({fill:"green", shape:"dot", text:"done"}); // seta o status pra waiting
-            // msg.payload = command
             console.log(command)
             send(msg)
         });
