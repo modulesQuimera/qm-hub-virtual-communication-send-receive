@@ -1,5 +1,5 @@
 {
-  "name": "qm-hub-virtual-communication-send-receive",
+  "name": "qm-virtual-communication-send-receive",
   "version": "1.0.3",
   "description": "virtual-communication send-receive module - Node-Red",
   "main": "send-receive.js",
