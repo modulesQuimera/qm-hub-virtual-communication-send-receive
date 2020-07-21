@@ -1,23 +1,26 @@
 <script type="text/javascript">
     RED.nodes.registerType('send-receive',{
         category: 'virtual communication',
-        color: '#FFFF00',
+        color: '#0080FF',
         defaults: {
             name:{ value: "" },
             message_send:{ value:"" },
-            mapeamento:{ value:"", type: "mapeamento" },
-            mapeamento2:{ value:"", type: "mapeamento" },
+            mapeamento:{ value:"", type: "communication-mapping" },
+            // mapeamento2:{ value:"", type: "communication-mapping" },
             port_send:{ value:""},
             port_receive:{ value:""},
-            timeout:{ value:"", validate: RED.validators.number() },
+            timeout:{ value:"1000", validate: RED.validators.number() },
             compare_select: {value:"none", required:true},
             equalTo: {value: ''},
             different: {value:''},
+            flag: {value:true},
+            // exitTimeout: {value:""}
+            // websocket:{ type: "jig-web-socket", required: true },
         },
         inputs:1,
         outputs:1,
-        icon: "Send_RSV.svg",
-        label: function() { return this.name || "Send Receive" },
+        icon: "Module_CMD.svg",
+        label: function() { return this.name? "Send Receive - " + this.name: "Send Receive" },
         paletteLabel: "Send Receive",
         oneditprepare: function() {
             var node = this;
@@ -33,7 +36,6 @@
                     $(".node-input-equal-to").show();
                     $(".node-input-different").hide();
                 }
-
                 if (compare === "different") {
                     $(".node-input-equal-to").hide();
                     $(".node-input-different").show();
@@ -42,14 +44,24 @@
 
             var ports = []
             var self = this
-
-            $.getJSON('getMapeamento',function(data) {
-                ports = data  
-                var portType = "custom";
+            var config_mapeamento = RED.nodes.node(this.mapeamento)
+            // console.log(config_mapeamento)
+            if(config_mapeamento){
+                ports = [
+                    {value:config_mapeamento.valuePort1, label:"RS232_DB9 -"+ config_mapeamento.labelPort1, hasValue:false},
+                    {value:config_mapeamento.valuePort2, label:"RS232_RJ11 -"+ config_mapeamento.labelPort2, hasValue:false},
+                    {value:config_mapeamento.valuePort3, label:"RS485 -"+ config_mapeamento.labelPort3, hasValue:false},
+                    {value:config_mapeamento.valuePort4, label:"UART_COM -"+ config_mapeamento.labelPort4, hasValue:false},
+                    {value:config_mapeamento.valuePort5, label:"UART_1 -"+ config_mapeamento.labelPort5, hasValue:false},
+                    {value:config_mapeamento.valuePort6, label:"UART_2 -"+ config_mapeamento.labelPort6, hasValue:false},
+                    {value:config_mapeamento.valuePort7, label:"UART_3 -"+ config_mapeamento.labelPort7, hasValue:false},
+                    {value:config_mapeamento.valuePort8, label:"UART_4 -"+ config_mapeamento.labelPort8, hasValue:false},
+                    {value:config_mapeamento.valuePort9, label:"I2C -"+ config_mapeamento.labelPort9, hasValue:false},
+                    {value:config_mapeamento.valuePort10, label:"SPI -"+ config_mapeamento.labelPort10, hasValue:false},
+                ];
                 for (var i in ports) {
                     if (self.port_send == ports[i].value) {
                         portType = self.port_send;
-                        console.log(ports[i].label)
                     }
                 }
                 $("#node-config-input-port").typedInput({
@@ -65,9 +77,39 @@
                     default: self.port_receive,
                     types:ports
                 });
-            })
-            $("#node-input-mapeamento").val($("#node-input-mapeamento option:first").val());
-            $("#node-input-mapeamento2").val($("#node-input-mapeamento2 option:first").val());
+            }
+            else{
+                ports = [
+                    {value:"RS232_1", label:"RS232_DB9 -", hasValue:false},
+                    {value:"RS232_2", label:"RS232_RJ11 -", hasValue:false},
+                    {value:"RS485", label:"RS485 -", hasValue:false},
+                    {value:"UART_COM", label:"UART_COM -", hasValue:false},
+                    {value:"UART_1", label:"UART_1 -", hasValue:false},
+                    {value:"UART_2", label:"UART_2 -", hasValue:false},
+                    {value:"UART_3", label:"UART_3 -", hasValue:false},
+                    {value:"UART_4", label:"UART_4 -", hasValue:false},
+                    {value:"I2C", label:"I2C -", hasValue:false},
+                    {value:"SPI", label:"SPI -", hasValue:false},
+                ];
+                for (var i in ports) {
+                    if (self.port_send == ports[i].value) {
+                        portType = self.port_send;
+                    }
+                }
+                $("#node-config-input-port").typedInput({
+                    default: self.port_send,
+                    types:ports
+                });
+                for (var i in ports) {
+                    if (self.port_receive == ports[i].value) {
+                        portType = self.port_receive;
+                    }
+                }
+                $("#node-config-input-port2").typedInput({
+                    default: self.port_receive,
+                    types:ports
+                });
+            }
         },
         oneditresize: function() {
             if(!$("#red-ui-header-button-deploy").hasClass("disabled")){
@@ -129,26 +171,40 @@
 
     <div class="form-row columm">
         <strong class="descript">
-            Send receive module is used to receive the value.
-        </strong>
+            Sends a message to a port and expects a return according to the port that was configured, along with a flag if it was due to a timeout or not.
+     </strong>
      </div>
+
+    <!-- <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div> -->
     <div class="form-row columm">
         <label for="node-input-message_send"><i class="fa fa-envelope"></i> Message</label>
         <input type="text" id="node-input-message_send" placeholder="message send" maxlength = "40">
     </div>
+    <div class="form-row" style="display: flex;">
+        <input type="checkbox" id="node-input-flag" style="width:5%;" checked>
+        <label for="node-input-flag">Enable get-output</label>
+    
+    </div>
     <div class="form-row columm">
         <label for="node-input-port_send"><i class="fa fa-microchip"></i> Port send</label>
-        <input type="text" id="node-config-input-port" style="width:83% ">
-        <div style="width:20px; margin-left:380px; margin-top:-34px">
+        <input type="text" id="node-config-input-port" style="width:70% ">
+        <!-- <div style="width:20px; margin-left:380px; margin-top:-34px">
             <input type="text" id="node-input-mapeamento" placeholder="mapeamento">
-        </div>
+        </div> -->
     </div>
     <div class="form-row columm" style="margin-top:4%;">
         <label for="node-input-port_receive"><i class="fa fa-microchip"></i> Port receive</label>
-        <input type="text" id="node-config-input-port2" style="width:83% !important">
-        <div style="width:20px; margin-left:410px; margin-top:-34px">
+        <input type="text" id="node-config-input-port2" style="width:70% !important">
+        <!-- <div style="width:20px; margin-left:410px; margin-top:-34px">
             <input type="text" id="node-input-mapeamento2" placeholder="mapeamento">
-        </div>
+        </div> -->
+    </div>
+    <div class="form-row">
+        <label for="node-input-mapeamento"><i class="fa fa-map"></i> Mapping</label>
+        <input type="text" id="node-input-mapeamento">
     </div>
     <div  class="form-row columm " style=" margin-top: 20px;">
         <label for="node-input-timeout"><i class="fa fa-clock-o"></i> Timeout</label>
@@ -159,7 +215,8 @@
     </div>
     <div class="form-row columm " style=" margin-top: 8px;">
         <label for="node-input-compare_select"><i class="icon-tag"></i>Comparison Type:</label>
-        <select id="node-input-compare_select"  >
+        <select id="node-input-compare_select" style="width: 140px;"  >
+            <!-- <option value="equalTo">Equal to</option> -->
             <option value="equal">Equal to</option>
             <option value="different">Different of</option>
             <option value="none" selected>None</option>
@@ -172,6 +229,7 @@
           <input type="text" id="node-input-equalTo" style=" width:250px !important ">
           </div>
         </div>
+
         <div class="node-input-different">
             <div class="columm">
               <label for="node-input-different" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
@@ -179,17 +237,27 @@
             </div>
         </div>
     </div>
+
+
+
     <div class="hr-div-receive">
         <hr>
         <span class="optional">Optional</span>
         <hr>
     </div>
+
     <div class="form-row columm">
         <label style="width: 50% !important;" for="node-input-name" ><i class="fa fa-tag"></i> Component Nickname</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
+    <!-- <label style="width: auto; margin-top: 8px;" for="node-input-exitTimeout"><i class="icon-tag"></i>Comparison timeout:</label>
+    <select id="node-input-exitTimeout" style="width: 20%" >
+        <option value="true">True</option>
+        <option value="false">False</option>
+        <option value="none" selected>None</option>
+    </select> -->
 </script>
 
 <script type="text/html" data-help-name="send-receive">
-    <p>Working on it...</p>
+    <p>Sends a message to a port and expects a return according to the port that was configured, along with a flag if it was due to a timeout or not.</p>
 </script>
