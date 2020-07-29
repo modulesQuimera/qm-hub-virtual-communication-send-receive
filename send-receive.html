@@ -4,9 +4,8 @@
         color: '#0080FF',
         defaults: {
             name:{ value: "" },
-            message_send:{ value:"" },
             mapeamento:{ value:"", type: "communication-mapping" },
-            // mapeamento2:{ value:"", type: "communication-mapping" },
+            message_send:{ value:"" },
             port_send:{ value:""},
             port_receive:{ value:""},
             timeout:{ value:"1000", validate: RED.validators.number() },
@@ -14,32 +13,212 @@
             equalTo: {value: ''},
             different: {value:''},
             flag: {value:true},
-            // exitTimeout: {value:""}
-            // websocket:{ type: "jig-web-socket", required: true },
+
+            qtdSendReceive:{value:0},
+            controle:{value:0},
+            message_send1:{ value:"" }, port_send1:{ value:""}, port_receive1:{ value:""}, timeout1:{ value:"1000" }, compare_select1: {value:"none"}, equalTo1: {value: ''}, different1: {value:''}, flag1: {value:true},
+            message_send2:{ value:"" }, port_send2:{ value:""}, port_receive2:{ value:""}, timeout2:{ value:"1000" }, compare_select2: {value:"none"}, equalTo2: {value: ''}, different2: {value:''}, flag2: {value:true},
+            message_send3:{ value:"" }, port_send3:{ value:""}, port_receive3:{ value:""}, timeout3:{ value:"1000" }, compare_select3: {value:"none"}, equalTo3: {value: ''}, different3: {value:''}, flag3: {value:true},
+            message_send4:{ value:"" }, port_send4:{ value:""}, port_receive4:{ value:""}, timeout4:{ value:"1000" }, compare_select4: {value:"none"}, equalTo4: {value: ''}, different4: {value:''}, flag4: {value:true},
+            message_send5:{ value:"" }, port_send5:{ value:""}, port_receive5:{ value:""}, timeout5:{ value:"1000" }, compare_select5: {value:"none"}, equalTo5: {value: ''}, different5: {value:''}, flag5: {value:true},
+            message_send6:{ value:"" }, port_send6:{ value:""}, port_receive6:{ value:""}, timeout6:{ value:"1000" }, compare_select6: {value:"none"}, equalTo6: {value: ''}, different6: {value:''}, flag6: {value:true},
+            message_send7:{ value:"" }, port_send7:{ value:""}, port_receive7:{ value:""}, timeout7:{ value:"1000" }, compare_select7: {value:"none"}, equalTo7: {value: ''}, different7: {value:''}, flag7: {value:true},
+            message_send8:{ value:"" }, port_send8:{ value:""}, port_receive8:{ value:""}, timeout8:{ value:"1000" }, compare_select8: {value:"none"}, equalTo8: {value: ''}, different8: {value:''}, flag8: {value:true},
+            message_send9:{ value:"" }, port_send9:{ value:""}, port_receive9:{ value:""}, timeout9:{ value:"1000" }, compare_select9: {value:"none"}, equalTo9: {value: ''}, different9: {value:''}, flag9: {value:true},
+            message_send10:{ value:"" }, port_send10:{ value:""}, port_receive10:{ value:""}, timeout10:{ value:"1000" }, compare_select10: {value:"none"}, equalTo10: {value: ''}, different10: {value:''}, flag10: {value:true},
+            message_send11:{ value:"" }, port_send11:{ value:""}, port_receive11:{ value:""}, timeout11:{ value:"1000" }, compare_select11: {value:"none"}, equalTo11: {value: ''}, different11: {value:''}, flag11: {value:true},
+            message_send12:{ value:"" }, port_send12:{ value:""}, port_receive12:{ value:""}, timeout12:{ value:"1000" }, compare_select12: {value:"none"}, equalTo12: {value: ''}, different12: {value:''}, flag12: {value:true},
+            message_send13:{ value:"" }, port_send13:{ value:""}, port_receive13:{ value:""}, timeout13:{ value:"1000" }, compare_select13: {value:"none"}, equalTo13: {value: ''}, different13: {value:''}, flag13: {value:true},
+            message_send14:{ value:"" }, port_send14:{ value:""}, port_receive14:{ value:""}, timeout14:{ value:"1000" }, compare_select14: {value:"none"}, equalTo14: {value: ''}, different14: {value:''}, flag14: {value:true},
+            message_send15:{ value:"" }, port_send15:{ value:""}, port_receive15:{ value:""}, timeout15:{ value:"1000" }, compare_select15: {value:"none"}, equalTo15: {value: ''}, different15: {value:''}, flag15: {value:true},
+            message_send16:{ value:"" }, port_send16:{ value:""}, port_receive16:{ value:""}, timeout16:{ value:"1000" }, compare_select16: {value:"none"}, equalTo16: {value: ''}, different16: {value:''}, flag16: {value:true},
+            message_send17:{ value:"" }, port_send17:{ value:""}, port_receive17:{ value:""}, timeout17:{ value:"1000" }, compare_select17: {value:"none"}, equalTo17: {value: ''}, different17: {value:''}, flag17: {value:true},
+            message_send18:{ value:"" }, port_send18:{ value:""}, port_receive18:{ value:""}, timeout18:{ value:"1000" }, compare_select18: {value:"none"}, equalTo18: {value: ''}, different18: {value:''}, flag18: {value:true},
+            message_send19:{ value:"" }, port_send19:{ value:""}, port_receive19:{ value:""}, timeout19:{ value:"1000" }, compare_select19: {value:"none"}, equalTo19: {value: ''}, different19: {value:''}, flag19: {value:true},
+            message_send20:{ value:"" }, port_send20:{ value:""}, port_receive20:{ value:""}, timeout20:{ value:"1000" }, compare_select20: {value:"none"}, equalTo20: {value: ''}, different20: {value:''}, flag20: {value:true},
+            message_send21:{ value:"" }, port_send21:{ value:""}, port_receive21:{ value:""}, timeout21:{ value:"1000" }, compare_select21: {value:"none"}, equalTo21: {value: ''}, different21: {value:''}, flag21: {value:true},
+            message_send22:{ value:"" }, port_send22:{ value:""}, port_receive22:{ value:""}, timeout22:{ value:"1000" }, compare_select22: {value:"none"}, equalTo22: {value: ''}, different22: {value:''}, flag22: {value:true},
+            message_send23:{ value:"" }, port_send23:{ value:""}, port_receive23:{ value:""}, timeout23:{ value:"1000" }, compare_select23: {value:"none"}, equalTo23: {value: ''}, different23: {value:''}, flag23: {value:true},
+            message_send24:{ value:"" }, port_send24:{ value:""}, port_receive24:{ value:""}, timeout24:{ value:"1000" }, compare_select24: {value:"none"}, equalTo24: {value: ''}, different24: {value:''}, flag24: {value:true},
         },
         inputs:1,
         outputs:1,
-        icon: "Module_CMD.svg",
-        label: function() { return this.name? "Send Receive - " + this.name: "Send Receive" },
-        paletteLabel: "Send Receive",
+        icon: "COM.svg",
+        label: function() { return this.name? "Receive - " + this.name: "Receive" },
+        paletteLabel: "Receive",
         oneditprepare: function() {
             var node = this;
-            var scope = node.scope || [];
+            var self = this
+            self.controle = self.qtdSendReceive;
+
+            for(var i=1; i<=self.controle; i++){
+                $(".sendReceive"+i).show();
+            }
+            if(!self.controle || self.controle < 0){
+                self.controle = 0;
+            }
+            $("#addSendReceive").click(function(){
+                self.controle = self.controle+1 <= 24 ? self.controle + 1 : 24;
+
+                $(".sendReceive"+self.controle).show();
+                console.log(self.controle);
+            });
+            $("#remSendReceive").click(function(){
+                $(".sendReceive"+self.controle).hide();
+                self.controle = self.controle-1 >= 0 ? self.controle - 1 : 0;
+                console.log(self.controle);
+            });
 
             $("#node-input-compare_select").on("change", function(e) {
                 var compare = $(this).val();
-                if (compare === "none") {
-                    $(".node-input-equal-to").hide();
-                    $(".node-input-different").hide();
-                }
-                if (compare === "equal") {
-                    $(".node-input-equal-to").show();
-                    $(".node-input-different").hide();
-                }
-                if (compare === "different") {
-                    $(".node-input-equal-to").hide();
-                    $(".node-input-different").show();
-                }
+                if (compare === "none") {$(".node-input-equal-to").hide();$(".node-input-different").hide();}
+                if (compare === "equal") {$(".node-input-equal-to").show();$(".node-input-different").hide();}
+                if (compare === "different") { $(".node-input-equal-to").hide(); $(".node-input-different").show();}
+            });
+
+            $("#node-input-compare_select1").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to1").hide();$(".node-input-different1").hide();}
+                if (compare === "equal") {$(".node-input-equal-to1").show();$(".node-input-different1").hide();}
+                if (compare === "different") { $(".node-input-equal-to1").hide(); $(".node-input-different1").show();}
+            });
+            $("#node-input-compare_select2").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to2").hide();$(".node-input-different2").hide();}
+                if (compare === "equal") {$(".node-input-equal-to2").show();$(".node-input-different2").hide();}
+                if (compare === "different") { $(".node-input-equal-to2").hide(); $(".node-input-different2").show();}
+            });
+            $("#node-input-compare_select3").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to3").hide();$(".node-input-different3").hide();}
+                if (compare === "equal") {$(".node-input-equal-to3").show();$(".node-input-different3").hide();}
+                if (compare === "different") { $(".node-input-equal-to3").hide(); $(".node-input-different3").show();}
+            });
+            $("#node-input-compare_select4").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to4").hide();$(".node-input-different4").hide();}
+                if (compare === "equal") {$(".node-input-equal-to4").show();$(".node-input-different4").hide();}
+                if (compare === "different") { $(".node-input-equal-to4").hide(); $(".node-input-different4").show();}
+            });
+            $("#node-input-compare_select5").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to5").hide();$(".node-input-different5").hide();}
+                if (compare === "equal") {$(".node-input-equal-to5").show();$(".node-input-different5").hide();}
+                if (compare === "different") { $(".node-input-equal-to5").hide(); $(".node-input-different5").show();}
+            });
+            $("#node-input-compare_select6").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to6").hide();$(".node-input-different6").hide();}
+                if (compare === "equal") {$(".node-input-equal-to6").show();$(".node-input-different6").hide();}
+                if (compare === "different") { $(".node-input-equal-to6").hide(); $(".node-input-different6").show();}
+            });
+            $("#node-input-compare_select7").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to7").hide();$(".node-input-different7").hide();}
+                if (compare === "equal") {$(".node-input-equal-to7").show();$(".node-input-different7").hide();}
+                if (compare === "different") { $(".node-input-equal-to7").hide(); $(".node-input-different7").show();}
+            });
+            $("#node-input-compare_select8").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to8").hide();$(".node-input-different8").hide();}
+                if (compare === "equal") {$(".node-input-equal-to8").show();$(".node-input-different8").hide();}
+                if (compare === "different") { $(".node-input-equal-to8").hide(); $(".node-input-different8").show();}
+            });
+            $("#node-input-compare_select9").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to9").hide();$(".node-input-different9").hide();}
+                if (compare === "equal") {$(".node-input-equal-to9").show();$(".node-input-different9").hide();}
+                if (compare === "different") { $(".node-input-equal-to9").hide(); $(".node-input-different9").show();}
+            });
+            $("#node-input-compare_select10").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to10").hide();$(".node-input-different10").hide();}
+                if (compare === "equal") {$(".node-input-equal-to10").show();$(".node-input-different10").hide();}
+                if (compare === "different") { $(".node-input-equal-to10").hide(); $(".node-input-different10").show();}
+            });
+            $("#node-input-compare_select11").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to11").hide();$(".node-input-different11").hide();}
+                if (compare === "equal") {$(".node-input-equal-to11").show();$(".node-input-different11").hide();}
+                if (compare === "different") { $(".node-input-equal-to11").hide(); $(".node-input-different11").show();}
+            });
+            $("#node-input-compare_select12").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to12").hide();$(".node-input-different12").hide();}
+                if (compare === "equal") {$(".node-input-equal-to12").show();$(".node-input-different12").hide();}
+                if (compare === "different") { $(".node-input-equal-to12").hide(); $(".node-input-different12").show();}
+            });
+            $("#node-input-compare_select13").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to13").hide();$(".node-input-different13").hide();}
+                if (compare === "equal") {$(".node-input-equal-to13").show();$(".node-input-different13").hide();}
+                if (compare === "different") { $(".node-input-equal-to13").hide(); $(".node-input-different13").show();}
+            });
+            $("#node-input-compare_select14").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to14").hide();$(".node-input-different14").hide();}
+                if (compare === "equal") {$(".node-input-equal-to14").show();$(".node-input-different14").hide();}
+                if (compare === "different") { $(".node-input-equal-to14").hide(); $(".node-input-different14").show();}
+            });
+            $("#node-input-compare_select15").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to15").hide();$(".node-input-different15").hide();}
+                if (compare === "equal") {$(".node-input-equal-to15").show();$(".node-input-different15").hide();}
+                if (compare === "different") { $(".node-input-equal-to15").hide(); $(".node-input-different15").show();}
+            });
+            $("#node-input-compare_select16").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to16").hide();$(".node-input-different16").hide();}
+                if (compare === "equal") {$(".node-input-equal-to16").show();$(".node-input-different16").hide();}
+                if (compare === "different") { $(".node-input-equal-to16").hide(); $(".node-input-different16").show();}
+            });
+            $("#node-input-compare_select17").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to17").hide();$(".node-input-different17").hide();}
+                if (compare === "equal") {$(".node-input-equal-to17").show();$(".node-input-different17").hide();}
+                if (compare === "different") { $(".node-input-equal-to17").hide(); $(".node-input-different17").show();}
+            });
+            $("#node-input-compare_select18").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to18").hide();$(".node-input-different18").hide();}
+                if (compare === "equal") {$(".node-input-equal-to18").show();$(".node-input-different18").hide();}
+                if (compare === "different") { $(".node-input-equal-to18").hide(); $(".node-input-different18").show();}
+            });
+            $("#node-input-compare_select19").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to19").hide();$(".node-input-different19").hide();}
+                if (compare === "equal") {$(".node-input-equal-to19").show();$(".node-input-different19").hide();}
+                if (compare === "different") { $(".node-input-equal-to19").hide(); $(".node-input-different19").show();}
+            });
+            $("#node-input-compare_select20").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to20").hide();$(".node-input-different20").hide();}
+                if (compare === "equal") {$(".node-input-equal-to20").show();$(".node-input-different20").hide();}
+                if (compare === "different") { $(".node-input-equal-to20").hide(); $(".node-input-different20").show();}
+            });
+            $("#node-input-compare_select21").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to21").hide();$(".node-input-different21").hide();}
+                if (compare === "equal") {$(".node-input-equal-to21").show();$(".node-input-different21").hide();}
+                if (compare === "different") { $(".node-input-equal-to21").hide(); $(".node-input-different21").show();}
+            });
+            $("#node-input-compare_select22").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to22").hide();$(".node-input-different22").hide();}
+                if (compare === "equal") {$(".node-input-equal-to22").show();$(".node-input-different22").hide();}
+                if (compare === "different") { $(".node-input-equal-to22").hide(); $(".node-input-different22").show();}
+            });
+            $("#node-input-compare_select23").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to23").hide();$(".node-input-different23").hide();}
+                if (compare === "equal") {$(".node-input-equal-to23").show();$(".node-input-different23").hide();}
+                if (compare === "different") { $(".node-input-equal-to23").hide(); $(".node-input-different23").show();}
+            });
+            $("#node-input-compare_select24").on("change", function(e) {
+                var compare = $(this).val();
+                if (compare === "none") {$(".node-input-equal-to24").hide();$(".node-input-different24").hide();}
+                if (compare === "equal") {$(".node-input-equal-to24").show();$(".node-input-different24").hide();}
+                if (compare === "different") { $(".node-input-equal-to24").hide(); $(".node-input-different24").show();}
             });
 
             var ports = []
@@ -59,24 +238,6 @@
                     {value:config_mapeamento.valuePort9, label:"I2C -"+ config_mapeamento.labelPort9, hasValue:false},
                     {value:config_mapeamento.valuePort10, label:"SPI -"+ config_mapeamento.labelPort10, hasValue:false},
                 ];
-                for (var i in ports) {
-                    if (self.port_send == ports[i].value) {
-                        portType = self.port_send;
-                    }
-                }
-                $("#node-config-input-port").typedInput({
-                    default: self.port_send,
-                    types:ports
-                });
-                for (var i in ports) {
-                    if (self.port_receive == ports[i].value) {
-                        portType = self.port_receive;
-                    }
-                }
-                $("#node-config-input-port2").typedInput({
-                    default: self.port_receive,
-                    types:ports
-                });
             }
             else{
                 ports = [
@@ -91,25 +252,209 @@
                     {value:"I2C", label:"I2C -", hasValue:false},
                     {value:"SPI", label:"SPI -", hasValue:false},
                 ];
-                for (var i in ports) {
-                    if (self.port_send == ports[i].value) {
-                        portType = self.port_send;
-                    }
-                }
-                $("#node-config-input-port").typedInput({
-                    default: self.port_send,
-                    types:ports
-                });
-                for (var i in ports) {
-                    if (self.port_receive == ports[i].value) {
-                        portType = self.port_receive;
-                    }
-                }
-                $("#node-config-input-port2").typedInput({
-                    default: self.port_receive,
-                    types:ports
-                });
             }
+            $("#node-config-input-port").typedInput({
+                default: self.port_send,
+                types:ports
+            });
+            $("#node-config-input-port2").typedInput({
+                default: self.port_receive,
+                types:ports
+            });
+
+            $("#node-config-input-portA1").typedInput({
+                default: self.port_send1,
+                types:ports
+            });
+            $("#node-config-input-portB1").typedInput({
+                default: self.port_receive1,
+                types:ports
+            });
+
+            $("#node-config-input-portA2").typedInput({
+                default: self.port_send2,
+                types:ports
+            });
+            $("#node-config-input-portB2").typedInput({
+                default: self.port_receive2,
+                types:ports
+            });
+            $("#node-config-input-portA3").typedInput({
+                default: self.port_send3,
+                types:ports
+            });
+            $("#node-config-input-portB3").typedInput({
+                default: self.port_receive3,
+                types:ports
+            });
+            $("#node-config-input-portA4").typedInput({
+                default: self.port_send4,
+                types:ports
+            });
+            $("#node-config-input-portB4").typedInput({
+                default: self.port_receive4,
+                types:ports
+            });
+            $("#node-config-input-portA5").typedInput({
+                default: self.port_send5,
+                types:ports
+            });
+            $("#node-config-input-portB5").typedInput({
+                default: self.port_receive5,
+                types:ports
+            });
+            $("#node-config-input-portA6").typedInput({
+                default: self.port_send6,
+                types:ports
+            });
+            $("#node-config-input-portB6").typedInput({
+                default: self.port_receive6,
+                types:ports
+            });
+            $("#node-config-input-portA7").typedInput({
+                default: self.port_send7,
+                types:ports
+            });
+            $("#node-config-input-portB7").typedInput({
+                default: self.port_receive7,
+                types:ports
+            });
+            $("#node-config-input-portA8").typedInput({
+                default: self.port_send8,
+                types:ports
+            });
+            $("#node-config-input-portB8").typedInput({
+                default: self.port_receive8,
+                types:ports
+            });
+            $("#node-config-input-portA9").typedInput({
+                default: self.port_send9,
+                types:ports
+            });
+            $("#node-config-input-portB9").typedInput({
+                default: self.port_receive9,
+                types:ports
+            });
+            $("#node-config-input-portA10").typedInput({
+                default: self.port_send10,
+                types:ports
+            });
+            $("#node-config-input-portB10").typedInput({
+                default: self.port_receive10,
+                types:ports
+            });
+            $("#node-config-input-portA11").typedInput({
+                default: self.port_send11,
+                types:ports
+            });
+            $("#node-config-input-portB11").typedInput({
+                default: self.port_receive11,
+                types:ports
+            });
+            $("#node-config-input-portA12").typedInput({
+                default: self.port_send12,
+                types:ports
+            });
+            $("#node-config-input-portB12").typedInput({
+                default: self.port_receive12,
+                types:ports
+            });
+            $("#node-config-input-portA13").typedInput({
+                default: self.port_send13,
+                types:ports
+            });
+            $("#node-config-input-portB13").typedInput({
+                default: self.port_receive13,
+                types:ports
+            });
+            $("#node-config-input-portA14").typedInput({
+                default: self.port_send14,
+                types:ports
+            });
+            $("#node-config-input-portB14").typedInput({
+                default: self.port_receive14,
+                types:ports
+            });
+            $("#node-config-input-portA15").typedInput({
+                default: self.port_send15,
+                types:ports
+            });
+            $("#node-config-input-portB15").typedInput({
+                default: self.port_receive15,
+                types:ports
+            });
+            $("#node-config-input-portA16").typedInput({
+                default: self.port_send16,
+                types:ports
+            });
+            $("#node-config-input-portB16").typedInput({
+                default: self.port_receive16,
+                types:ports
+            });
+            $("#node-config-input-portA17").typedInput({
+                default: self.port_send17,
+                types:ports
+            });
+            $("#node-config-input-portB17").typedInput({
+                default: self.port_receive17,
+                types:ports
+            });
+            $("#node-config-input-portA18").typedInput({
+                default: self.port_send18,
+                types:ports
+            });
+            $("#node-config-input-portB18").typedInput({
+                default: self.port_receive18,
+                types:ports
+            });
+            $("#node-config-input-portA19").typedInput({
+                default: self.port_send19,
+                types:ports
+            });
+            $("#node-config-input-portB19").typedInput({
+                default: self.port_receive19,
+                types:ports
+            });
+            $("#node-config-input-portA20").typedInput({
+                default: self.port_send20,
+                types:ports
+            });
+            $("#node-config-input-portB20").typedInput({
+                default: self.port_receive20,
+                types:ports
+            });
+            $("#node-config-input-portA21").typedInput({
+                default: self.port_send21,
+                types:ports
+            });
+            $("#node-config-input-portB21").typedInput({
+                default: self.port_receive21,
+                types:ports
+            });
+            $("#node-config-input-portA22").typedInput({
+                default: self.port_send22,
+                types:ports
+            });
+            $("#node-config-input-portB22").typedInput({
+                default: self.port_receive22,
+                types:ports
+            });
+            $("#node-config-input-portA23").typedInput({
+                default: self.port_send23,
+                types:ports
+            });
+            $("#node-config-input-portB23").typedInput({
+                default: self.port_receive23,
+                types:ports
+            });
+            $("#node-config-input-portA24").typedInput({
+                default: self.port_send24,
+                types:ports
+            });
+            $("#node-config-input-portB24").typedInput({
+                default: self.port_receive24,
+                types:ports
+            });
         },
         oneditresize: function() {
             if(!$("#red-ui-header-button-deploy").hasClass("disabled")){
@@ -121,13 +466,181 @@
         oneditsave: function() {
             var mytype = $("#node-config-input-port").typedInput('type');
             var mytype2 = $("#node-config-input-port2").typedInput('type');
-
-            console.log(mytype)
-
             $("#node-config-input-port").typedInput('value', mytype);
             this.port_send = $("#node-config-input-port").typedInput('value');
             $("#node-config-input-port2").typedInput('value', mytype2);
             this.port_receive = $("#node-config-input-port2").typedInput('value');
+
+            var mytypeA1  = $("#node-config-input-portA1").typedInput('type');
+            var mytypeB1  = $("#node-config-input-portB1").typedInput('type');
+            var mytypeA2  = $("#node-config-input-portA2").typedInput('type');
+            var mytypeB2  = $("#node-config-input-portB2").typedInput('type');
+            var mytypeA3  = $("#node-config-input-portA3").typedInput('type');
+            var mytypeB3  = $("#node-config-input-portB3").typedInput('type');
+            var mytypeA4  = $("#node-config-input-portA4").typedInput('type');
+            var mytypeB4  = $("#node-config-input-portB4").typedInput('type');
+            var mytypeA5  = $("#node-config-input-portA5").typedInput('type');
+            var mytypeB5  = $("#node-config-input-portB5").typedInput('type');
+            var mytypeA6  = $("#node-config-input-portA6").typedInput('type');
+            var mytypeB6  = $("#node-config-input-portB6").typedInput('type');
+            var mytypeA7  = $("#node-config-input-portA7").typedInput('type');
+            var mytypeB7  = $("#node-config-input-portB7").typedInput('type');
+            var mytypeA8  = $("#node-config-input-portA8").typedInput('type');
+            var mytypeB8  = $("#node-config-input-portB8").typedInput('type');
+            var mytypeA9  = $("#node-config-input-portA9").typedInput('type');
+            var mytypeB9  = $("#node-config-input-portB9").typedInput('type');
+            var mytypeA10 = $("#node-config-input-portA10").typedInput('type');
+            var mytypeB10 = $("#node-config-input-portB10").typedInput('type');
+            var mytypeA11 = $("#node-config-input-portA11").typedInput('type');
+            var mytypeB11 = $("#node-config-input-portB11").typedInput('type');
+            var mytypeA12 = $("#node-config-input-portA12").typedInput('type');
+            var mytypeB12 = $("#node-config-input-portB12").typedInput('type');
+            var mytypeA13 = $("#node-config-input-portA13").typedInput('type');
+            var mytypeB13 = $("#node-config-input-portB13").typedInput('type');
+            var mytypeA14 = $("#node-config-input-portA14").typedInput('type');
+            var mytypeB14 = $("#node-config-input-portB14").typedInput('type');
+            var mytypeA15 = $("#node-config-input-portA15").typedInput('type');
+            var mytypeB15 = $("#node-config-input-portB15").typedInput('type');
+            var mytypeA16 = $("#node-config-input-portA16").typedInput('type');
+            var mytypeB16 = $("#node-config-input-portB16").typedInput('type');
+            var mytypeA17 = $("#node-config-input-portA17").typedInput('type');
+            var mytypeB17 = $("#node-config-input-portB17").typedInput('type');
+            var mytypeA18 = $("#node-config-input-portA18").typedInput('type');
+            var mytypeB18 = $("#node-config-input-portB18").typedInput('type');
+            var mytypeA19 = $("#node-config-input-portA19").typedInput('type');
+            var mytypeB19 = $("#node-config-input-portB19").typedInput('type');
+            var mytypeA20 = $("#node-config-input-portA20").typedInput('type');
+            var mytypeB20 = $("#node-config-input-portB20").typedInput('type');
+            var mytypeA21 = $("#node-config-input-portA21").typedInput('type');
+            var mytypeB21 = $("#node-config-input-portB21").typedInput('type');
+            var mytypeA22 = $("#node-config-input-portA22").typedInput('type');
+            var mytypeB22 = $("#node-config-input-portB22").typedInput('type');
+            var mytypeA23 = $("#node-config-input-portA23").typedInput('type');
+            var mytypeB23 = $("#node-config-input-portB23").typedInput('type');
+            var mytypeA24 = $("#node-config-input-portA24").typedInput('type');
+            var mytypeB24 = $("#node-config-input-portB24").typedInput('type');
+
+            $("#node-config-input-portA1").typedInput('value', mytypeA1);
+            this.port_send1 = $("#node-config-input-portA1").typedInput('value');
+            $("#node-config-input-portB1").typedInput('value', mytypeB1);
+            this.port_receive1 = $("#node-config-input-portB1").typedInput('value');
+
+            $("#node-config-input-portA2").typedInput('value', mytypeA2);
+            this.port_send2 = $("#node-config-input-portA2").typedInput('value');
+            $("#node-config-input-portB2").typedInput('value', mytypeB2);
+            this.port_receive2 = $("#node-config-input-portB2").typedInput('value');
+
+            $("#node-config-input-portA3").typedInput('value', mytypeA3);
+            this.port_send3 = $("#node-config-input-portA3").typedInput('value');
+            $("#node-config-input-portB3").typedInput('value', mytypeB3);
+            this.port_receive3 = $("#node-config-input-portB3").typedInput('value');
+
+            $("#node-config-input-portA4").typedInput('value', mytypeA4);
+            this.port_send4 = $("#node-config-input-portA4").typedInput('value');
+            $("#node-config-input-portB4").typedInput('value', mytypeB4);
+            this.port_receive4 = $("#node-config-input-portB4").typedInput('value');
+
+            $("#node-config-input-portA5").typedInput('value', mytypeA5);
+            this.port_send5 = $("#node-config-input-portA5").typedInput('value');
+            $("#node-config-input-portB5").typedInput('value', mytypeB5);
+            this.port_receive5 = $("#node-config-input-portB5").typedInput('value');
+
+            $("#node-config-input-portA6").typedInput('value', mytypeA6);
+            this.port_send6 = $("#node-config-input-portA6").typedInput('value');
+            $("#node-config-input-portB6").typedInput('value', mytypeB6);
+            this.port_receive6 = $("#node-config-input-portB6").typedInput('value');
+
+            $("#node-config-input-portA7").typedInput('value', mytypeA7);
+            this.port_send7 = $("#node-config-input-portA7").typedInput('value');
+            $("#node-config-input-portB7").typedInput('value', mytypeB7);
+            this.port_receive7 = $("#node-config-input-portB7").typedInput('value');
+
+            $("#node-config-input-portA8").typedInput('value', mytypeA8);
+            this.port_send8 = $("#node-config-input-portA8").typedInput('value');
+            $("#node-config-input-portB8").typedInput('value', mytypeB8);
+            this.port_receive8 = $("#node-config-input-portB8").typedInput('value');
+
+            $("#node-config-input-portA9").typedInput('value', mytypeA9);
+            this.port_send9 = $("#node-config-input-portA9").typedInput('value');
+            $("#node-config-input-portB9").typedInput('value', mytypeB9);
+            this.port_receive9 = $("#node-config-input-portB9").typedInput('value');
+
+            $("#node-config-input-portA10").typedInput('value', mytypeA10);
+            this.port_send10 = $("#node-config-input-portA10").typedInput('value');
+            $("#node-config-input-portB10").typedInput('value', mytypeB10);
+            this.port_receive10 = $("#node-config-input-portB10").typedInput('value');
+
+            $("#node-config-input-portA11").typedInput('value', mytypeA11);
+            this.port_send11 = $("#node-config-input-portA11").typedInput('value');
+            $("#node-config-input-portB11").typedInput('value', mytypeB11);
+            this.port_receive11 = $("#node-config-input-portB11").typedInput('value');
+
+            $("#node-config-input-portA12").typedInput('value', mytypeA12);
+            this.port_send12 = $("#node-config-input-portA12").typedInput('value');
+            $("#node-config-input-portB12").typedInput('value', mytypeB12);
+            this.port_receive12 = $("#node-config-input-portB12").typedInput('value');
+
+            $("#node-config-input-portA13").typedInput('value', mytypeA13);
+            this.port_send13 = $("#node-config-input-portA13").typedInput('value');
+            $("#node-config-input-portB13").typedInput('value', mytypeB13);
+            this.port_receive13 = $("#node-config-input-portB13").typedInput('value');
+
+            $("#node-config-input-portA14").typedInput('value', mytypeA14);
+            this.port_send14 = $("#node-config-input-portA14").typedInput('value');
+            $("#node-config-input-portB14").typedInput('value', mytypeB14);
+            this.port_receive14 = $("#node-config-input-portB14").typedInput('value');
+
+            $("#node-config-input-portA15").typedInput('value', mytypeA15);
+            this.port_send15 = $("#node-config-input-portA15").typedInput('value');
+            $("#node-config-input-portB15").typedInput('value', mytypeB15);
+            this.port_receive15 = $("#node-config-input-portB15").typedInput('value');
+            
+            $("#node-config-input-portA16").typedInput('value', mytypeA16);
+            this.port_send16 = $("#node-config-input-portA16").typedInput('value');
+            $("#node-config-input-portB16").typedInput('value', mytypeB16);
+            this.port_receive16 = $("#node-config-input-portB16").typedInput('value');
+
+            $("#node-config-input-portA17").typedInput('value', mytypeA17);
+            this.port_send17 = $("#node-config-input-portA17").typedInput('value');
+            $("#node-config-input-portB17").typedInput('value', mytypeB17);
+            this.port_receive17 = $("#node-config-input-portB17").typedInput('value');
+
+            $("#node-config-input-portA18").typedInput('value', mytypeA18);
+            this.port_send18 = $("#node-config-input-portA18").typedInput('value');
+            $("#node-config-input-portB18").typedInput('value', mytypeB18);
+            this.port_receive18 = $("#node-config-input-portB18").typedInput('value');
+
+            $("#node-config-input-portA19").typedInput('value', mytypeA19);
+            this.port_send19 = $("#node-config-input-portA19").typedInput('value');
+            $("#node-config-input-portB19").typedInput('value', mytypeB19);
+            this.port_receive19 = $("#node-config-input-portB19").typedInput('value');
+
+            $("#node-config-input-portA20").typedInput('value', mytypeA20);
+            this.port_send20 = $("#node-config-input-portA20").typedInput('value');
+            $("#node-config-input-portB20").typedInput('value', mytypeB20);
+            this.port_receive20 = $("#node-config-input-portB20").typedInput('value');
+
+            $("#node-config-input-portA21").typedInput('value', mytypeA21);
+            this.port_send21 = $("#node-config-input-portA21").typedInput('value');
+            $("#node-config-input-portB21").typedInput('value', mytypeB21);
+            this.port_receive21 = $("#node-config-input-portB21").typedInput('value');
+
+            $("#node-config-input-portA22").typedInput('value', mytypeA22);
+            this.port_send22 = $("#node-config-input-portA22").typedInput('value');
+            $("#node-config-input-portB22").typedInput('value', mytypeB22);
+            this.port_receive22 = $("#node-config-input-portB22").typedInput('value');
+
+            $("#node-config-input-portA23").typedInput('value', mytypeA23);
+            this.port_send23 = $("#node-config-input-portA23").typedInput('value');
+            $("#node-config-input-portB23").typedInput('value', mytypeB23);
+            this.port_receive23 = $("#node-config-input-portB23").typedInput('value');
+
+            $("#node-config-input-portA24").typedInput('value', mytypeA24);
+            this.port_send24 = $("#node-config-input-portA24").typedInput('value');
+            $("#node-config-input-portB24").typedInput('value', mytypeB24);
+            this.port_receive24 = $("#node-config-input-portB24").typedInput('value');
+
+            this.qtdSendReceive = this.controle;
         }
     });
 
@@ -135,7 +648,7 @@
 
 <style>
     label{
-        width: 50% !important;
+        width: 100% !important;
         margin-bottom: 2px !important;
     }
 
@@ -143,6 +656,29 @@
         display: flex !important;
         flex-direction: column !important;
     }
+
+
+    .columm-30{
+        display: flex !important;
+        flex-direction: column !important;
+        width: 30% !important;
+        float: left !important;
+    }
+    .columm-50{
+        display: flex !important;
+        flex-direction: column !important;
+        width: 50% !important;
+        float: left !important;
+    }
+
+
+    .columm-70{
+        display: flex !important;
+        flex-direction: column !important;
+        width: 70% !important;
+        float: left !important;
+    }
+
 
     hr {
     width: 40% !important;
@@ -152,7 +688,7 @@
     .hr-div-receive{
         display: flex !important;
         justify-content: space-between !important;
-        margin-top: 150px !important;
+        /* margin-top: 150px !important; */
     }
 
     .optional{
@@ -164,25 +700,78 @@
         text-align: center;
     }
 
+
+    .descript-div{
+        max-width: 444px !important;
+    }
+
+    span.red-ui-typedInput-type-label {
+    /* background: chartreuse; */
+    /* display: block; */
+    width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    }
+
+    .btn-aln{
+        display: flex !important;
+        flex-direction: row-reverse !important;
+        /* padding-left: 30px; */
+        align-content: center;
+        align-items: flex-end;
+    }
+
 </style>
 
 <script type="text/html" data-template-name="send-receive">
 
 
-    <div class="form-row columm">
+    <div class="form-row columm descript-div">
         <strong class="descript">
             Sends a message to a port and expects a return according to the port that was configured, along with a flag if it was due to a timeout or not.
      </strong>
-     </div>
-
-    <!-- <div class="form-row">
-        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    </div>
+    <div style=" position: relative; display:flex;">
+        <div class="form-row columm-70">
+            <label style="width: 50% !important;" for="node-input-name" ><i class="fa fa-tag"></i> Identification Note</label>
+            <input type="text" id="node-input-name" placeholder="Name" style="width: 100%">
+        </div>
+        <div class="form-row columm-30" style="align-items: flex-end !important;">
+            <label style="width: max-content !important; padding-right: 24px;"><i class="fa fa-list-ul"></i> Item</label>
+            <div class="form-row btn-aln" >
+                <a id="addSendReceive" class="red-ui-button" ><i class="fa fa-plus"></i></a>
+                <a id="remSendReceive" class="red-ui-button" style="margin-right: 5px;" ><i class="fa fa-minus"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="form-row" >
+        <button type="button" id="addSendReceive"> <i class="fa fa-plus" style=" font-size: 15px;"></i> Add</button>
+        <button    type="button" id="remSendReceive"> <i class="fa fa-trash" style=" font-size: 15px;"></i> Remove</button>
+    </div>
+    <div class="form-row columm">
+        <label style="width: 50% !important;" for="node-input-name" ><i class="fa fa-tag"></i> Identification Note</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div> -->
-    <div class="form-row columm">
-        <label for="node-input-message_send"><i class="fa fa-envelope"></i> Message</label>
-        <input type="text" id="node-input-message_send" placeholder="message send" maxlength = "40">
+    <div class="hr-div-receive">
+        <hr>
+        <span class="optional">Receive 0</span>
+        <hr>
+    </div> 
+    <div style=" position: relative; display:flex;">
+        <div class="form-row columm-70">
+            <label for="node-input-message_send"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send" placeholder="message send" maxlength = "40" style="width: 100%">
+        </div>
+
+        <div  class="form-row columm-30 " style="padding-left: 10px;">
+            <label for="node-input-timeout"><i class="fa fa-clock-o"></i> Timeout</label>
+            <div>
+                <input type="number" id="node-input-timeout" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+            </div>
+        </div>
     </div>
+
     <div class="form-row" style="display: flex;">
         <input type="checkbox" id="node-input-flag" style="width:5%;" checked>
         <label for="node-input-flag">Enable get-output</label>
@@ -191,71 +780,1793 @@
     <div class="form-row columm">
         <label for="node-input-port_send"><i class="fa fa-microchip"></i> Port send</label>
         <input type="text" id="node-config-input-port" style="width:70% ">
-        <!-- <div style="width:20px; margin-left:380px; margin-top:-34px">
-            <input type="text" id="node-input-mapeamento" placeholder="mapeamento">
-        </div> -->
     </div>
     <div class="form-row columm" style="margin-top:4%;">
         <label for="node-input-port_receive"><i class="fa fa-microchip"></i> Port receive</label>
         <input type="text" id="node-config-input-port2" style="width:70% !important">
-        <!-- <div style="width:20px; margin-left:410px; margin-top:-34px">
-            <input type="text" id="node-input-mapeamento2" placeholder="mapeamento">
-        </div> -->
     </div>
     <div class="form-row">
-        <label for="node-input-mapeamento"><i class="fa fa-map"></i> Mapping</label>
+        <label for="node-input-mapeamento"><i class="fa fa-map"></i> PCI Connection Map</label>
         <input type="text" id="node-input-mapeamento">
     </div>
-    <div  class="form-row columm " style=" margin-top: 20px;">
-        <label for="node-input-timeout"><i class="fa fa-clock-o"></i> Timeout</label>
-        <div>
-            <input type="number" id="node-input-timeout" placeholder="timeout" style="width:18%;">
-            <label for="node-input-timeout"> ms</label>
-        </div>
-    </div>
-    <div class="form-row columm " style=" margin-top: 8px;">
-        <label for="node-input-compare_select"><i class="icon-tag"></i>Comparison Type:</label>
-        <select id="node-input-compare_select" style="width: 140px;"  >
-            <!-- <option value="equalTo">Equal to</option> -->
-            <option value="equal">Equal to</option>
-            <option value="different">Different of</option>
-            <option value="none" selected>None</option>
-        </select>
-      </div>
-      <div class="form-row columm" style="display: flex;">
-        <div class="node-input-equal-to">
-          <div class="columm">
-            <label for="node-input-equalTo" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
-          <input type="text" id="node-input-equalTo" style=" width:250px !important ">
-          </div>
+
+    <div style=" position: relative; display:flex;">
+        <div class="form-row columm-50 " style=" margin-top: 8px;" >
+            <label for="node-input-compare_select" ><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
         </div>
 
-        <div class="node-input-different">
+        <div class="form-row columm-50" style="display: flex; margin-top: 8px;">
+            <div class="node-input-equal-to">
             <div class="columm">
-              <label for="node-input-different" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
-            <input type="text" id="node-input-different" style=" width:250px !important ">
+                <label for="node-input-equalTo" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+            <input type="text" id="node-input-equalTo" style=" width:220px !important ">
+            </div>
+            </div>
+            <div class="node-input-different">
+                <div class="columm">
+                <label for="node-input-different" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different" style=" width:220px !important ">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- ******************************************* -->
+    <div class="sendReceive1" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 1</span>
+            <hr>
+        </div> 
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send1"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send1" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+
+            <div  class="form-row columm-30" style="padding-left: 10px;">
+                <label for="node-input-timeout1"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout1" placeholder="timeout"  style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag1" style="width:5%;" checked>
+            <label for="node-input-flag1">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send1"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA1" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive1"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB1" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+        
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select1"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select1" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to1">
+                <div class="columm">
+                    <label for="node-input-equalTo1" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                <input type="text" id="node-input-equalTo1" style=" width:220px !important ">
+                </div>
+                </div>
+                <div class="node-input-different1">
+                    <div class="columm">
+                    <label for="node-input-different1" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                    <input type="text" id="node-input-different1" style=" width:220px !important ">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
 
 
-    <div class="hr-div-receive">
+
+    <div class="sendReceive2" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 2</span>
+            <hr>
+        </div> 
+
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send2"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send2" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout2"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout2" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag2" style="width:5%;" checked>
+            <label for="node-input-flag2">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send2"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA2" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive2"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB2" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select2"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select2" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to2">
+                <div class="columm">
+                    <label for="node-input-equalTo2" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                <input type="text" id="node-input-equalTo2" style=" width:220px !important ">
+                </div>
+                </div>
+                <div class="node-input-different2">
+                    <div class="columm">
+                    <label for="node-input-different2" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                    <input type="text" id="node-input-different2" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sendReceive3" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 3</span>
+            <hr>
+        </div> 
+
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send3"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send3" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout3"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout3" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag3" style="width:5%;" checked>
+            <label for="node-input-flag3">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send3"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA3" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive3"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB3" style="width:70% !important">
+        </div>
+       
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select3"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select3" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to3">
+                <div class="columm">
+                    <label for="node-input-equalTo3" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                <input type="text" id="node-input-equalTo3" style=" width:220px !important ">
+                </div>
+                </div>
+                <div class="node-input-different3">
+                    <div class="columm">
+                    <label for="node-input-different3" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                    <input type="text" id="node-input-different3" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sendReceive4" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 4</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send4"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send4" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout4"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout4" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag4" style="width:5%;" checked>
+            <label for="node-input-flag4">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send4"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA4" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive4"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB4" style="width:70% !important">
+        </div>
+       
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select4"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select4" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to4">
+                    <div class="columm">
+                        <label for="node-input-equalTo4" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo4" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different4">
+                    <div class="columm">
+                        <label for="node-input-different4" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different4" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sendReceive5" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 5</span>
+            <hr>
+        </div> 
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send5"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send5" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout5"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout5" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag5" style="width:5%;" checked>
+            <label for="node-input-flag5">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send5"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA5" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive5"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB5" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select5"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select5" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to5">
+                    <div class="columm">
+                        <label for="node-input-equalTo5" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo5" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different5">
+                    <div class="columm">
+                        <label for="node-input-different5" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different5" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sendReceive6" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 6</span>
+            <hr>
+        </div> 
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send6"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send6" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout6"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout6" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag6" style="width:5%;" checked>
+            <label for="node-input-flag6">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send6"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA6" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive6"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB6" style="width:70% !important">
+        </div>
+    
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select6"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select6" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to6">
+                    <div class="columm">
+                        <label for="node-input-equalTo6" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo6" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different6">
+                    <div class="columm">
+                        <label for="node-input-different6" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different6" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sendReceive7" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 7</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send7"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send7" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout7"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout7" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+      
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag7" style="width:5%;" checked>
+            <label for="node-input-flag7">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send7"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA7" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive7"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB7" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select7"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select7" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to7">
+                    <div class="columm">
+                        <label for="node-input-equalTo7" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo7" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different7">
+                    <div class="columm">
+                        <label for="node-input-different7" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different7" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="sendReceive8" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 8</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send8"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send8" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout8"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout8" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+      
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag8" style="width:5%;" checked>
+            <label for="node-input-flag8">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send8"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA8" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive8"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB8" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select8"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select8" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to8">
+                    <div class="columm">
+                        <label for="node-input-equalTo8" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo8" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different8">
+                    <div class="columm">
+                        <label for="node-input-different8" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different8" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="sendReceive9" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 9</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send9"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send9" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout9"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout9" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+      
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag9" style="width:5%;" checked>
+            <label for="node-input-flag9">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send9"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA9" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive9"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB9" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select9"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select9" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to9">
+                    <div class="columm">
+                        <label for="node-input-equalTo9" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo9" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different9">
+                    <div class="columm">
+                        <label for="node-input-different9" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different9" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="sendReceive10" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 10</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send10"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send10" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout10"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout10" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+    
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag10" style="width:5%;" checked>
+            <label for="node-input-flag10">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send10"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA10" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive10"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB10" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select10"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select10" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to10">
+                    <div class="columm">
+                        <label for="node-input-equalTo10" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo10" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different10">
+                    <div class="columm">
+                        <label for="node-input-different10" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different10" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
+
+    <div class="sendReceive11" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 11</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send11"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send11" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout11"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout11" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+     
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag11" style="width:5%;" checked>
+            <label for="node-input-flag11">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send11"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA11" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive11"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB11" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select11"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select11" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to11">
+                    <div class="columm">
+                        <label for="node-input-equalTo11" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo11" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different11">
+                    <div class="columm">
+                        <label for="node-input-different11" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different11" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
+    <div class="sendReceive12" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 12</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send12"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send12" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout12"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout12" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+     
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag12" style="width:5%;" checked>
+            <label for="node-input-flag12">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send12"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA12" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive12"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB12" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select12"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select12" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to12">
+                    <div class="columm">
+                        <label for="node-input-equalTo12" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo12" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different12">
+                    <div class="columm">
+                        <label for="node-input-different12" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different12" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    </div>
+    <div class="sendReceive13" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 13</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send13"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send13" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout13"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout13" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+       
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag13" style="width:5%;" checked>
+            <label for="node-input-flag13">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send13"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA13" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive13"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB13" style="width:70% !important">
+        </div>
+
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select13"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select13" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to13">
+                    <div class="columm">
+                        <label for="node-input-equalTo13" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo13" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different13">
+                    <div class="columm">
+                        <label for="node-input-different13" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different13" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sendReceive14" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 14</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send14"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send14" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout14"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout14" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send14"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send14" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag14" style="width:5%;" checked>
+            <label for="node-input-flag14">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send14"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA14" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive14"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB14" style="width:70% !important">
+        </div>
+
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select14"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select14" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to14">
+                    <div class="columm">
+                        <label for="node-input-equalTo14" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo14" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different14">
+                    <div class="columm">
+                        <label for="node-input-different14" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different14" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div  class="form-row columm " style=" margin-top: 20px;">
+            <label for="node-input-timeout14"><i class="fa fa-clock-o"></i> Timeout</label>
+            <div>
+                <input type="number" id="node-input-timeout14" placeholder="timeout" style="width:18%;">
+                <label for="node-input-timeout14"> ms</label>
+            </div>
+        </div>
+        <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select14"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select14" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to14">
+              <div class="columm">
+                <label for="node-input-equalTo14" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo14" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different14">
+                <div class="columm">
+                  <label for="node-input-different14" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different14" style=" width:250px !important ">
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="sendReceive15" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 15</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send15"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send15" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout15"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout15" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send15"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send15" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag15" style="width:5%;" checked>
+            <label for="node-input-flag15">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send15"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA15" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive15"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB15" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select15"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select15" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to15">
+                    <div class="columm">
+                        <label for="node-input-equalTo15" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo15" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different15">
+                    <div class="columm">
+                        <label for="node-input-different15" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different15" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div  class="form-row columm " style=" margin-top: 20px;">
+            <label for="node-input-timeout15"><i class="fa fa-clock-o"></i> Timeout</label>
+            <div>
+                <input type="number" id="node-input-timeout15" placeholder="timeout" style="width:18%;">
+                <label for="node-input-timeout15"> ms</label>
+            </div>
+        </div>
+        <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select15"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select15" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to15">
+              <div class="columm">
+                <label for="node-input-equalTo15" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo15" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different15">
+                <div class="columm">
+                  <label for="node-input-different15" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different15" style=" width:250px !important ">
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="sendReceive16" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 16</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send16"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send16" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout16"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout16" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send16"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send16" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag16" style="width:5%;" checked>
+            <label for="node-input-flag16">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send16"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA16" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive16"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB16" style="width:70% !important">
+        </div>
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select16"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select16" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to16">
+                    <div class="columm">
+                        <label for="node-input-equalTo16" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo16" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different16">
+                    <div class="columm">
+                        <label for="node-input-different16" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different16" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div  class="form-row columm " style=" margin-top: 20px;">
+            <label for="node-input-timeout16"><i class="fa fa-clock-o"></i> Timeout</label>
+            <div>
+                <input type="number" id="node-input-timeout16" placeholder="timeout" style="width:18%;">
+                <label for="node-input-timeout16"> ms</label>
+            </div>
+        </div>
+        <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select16"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select16" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to16">
+              <div class="columm">
+                <label for="node-input-equalTo16" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo16" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different16">
+                <div class="columm">
+                  <label for="node-input-different16" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different16" style=" width:250px !important ">
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="sendReceive17" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 17</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send17"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send17" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout17"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout17" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send17"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send17" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag17" style="width:5%;" checked>
+            <label for="node-input-flag17">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send17"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA17" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive17"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB17" style="width:70% !important">
+        </div>
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select17"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select17" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to17">
+                    <div class="columm">
+                        <label for="node-input-equalTo17" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo17" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different17">
+                    <div class="columm">
+                        <label for="node-input-different17" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different17" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div  class="form-row columm " style=" margin-top: 20px;">
+            <label for="node-input-timeout17"><i class="fa fa-clock-o"></i> Timeout</label>
+            <div>
+                <input type="number" id="node-input-timeout17" placeholder="timeout" style="width:18%;">
+                <label for="node-input-timeout17"> ms</label>
+            </div>
+        </div>
+        <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select17"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select17" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to17">
+              <div class="columm">
+                <label for="node-input-equalTo17" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo17" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different17">
+                <div class="columm">
+                  <label for="node-input-different17" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different17" style=" width:250px !important ">
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="sendReceive18" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 18</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send18"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send18" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout18"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout18" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send18"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send18" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag18" style="width:5%;" checked>
+            <label for="node-input-flag18">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send18"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA18" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive18"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB18" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select18"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select18" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to18">
+                    <div class="columm">
+                        <label for="node-input-equalTo18" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo18" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different18">
+                    <div class="columm">
+                        <label for="node-input-different18" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different18" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div  class="form-row columm " style=" margin-top: 20px;">
+            <label for="node-input-timeout18"><i class="fa fa-clock-o"></i> Timeout</label>
+            <div>
+                <input type="number" id="node-input-timeout18" placeholder="timeout" style="width:18%;">
+                <label for="node-input-timeout18"> ms</label>
+            </div>
+        </div>
+        <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select18"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select18" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to18">
+              <div class="columm">
+                <label for="node-input-equalTo18" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo18" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different18">
+                <div class="columm">
+                  <label for="node-input-different18" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different18" style=" width:250px !important ">
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="sendReceive19" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 19</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send19"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send19" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout19"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout19" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send19"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send19" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag19" style="width:5%;" checked>
+            <label for="node-input-flag19">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send19"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA19" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive19"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB19" style="width:70% !important">
+        </div>
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select19"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select19" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to19">
+                    <div class="columm">
+                        <label for="node-input-equalTo19" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo19" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different19">
+                    <div class="columm">
+                        <label for="node-input-different19" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different19" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select19"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select19" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to19">
+              <div class="columm">
+                <label for="node-input-equalTo19" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo19" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different19">
+                <div class="columm">
+                  <label for="node-input-different19" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different19" style=" width:250px !important ">
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="sendReceive20" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 20</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send20"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send20" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout20"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout20" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send20"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send20" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag20" style="width:5%;" checked>
+            <label for="node-input-flag20">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send20"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA20" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive20"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB20" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select20"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select20" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to20">
+                    <div class="columm">
+                        <label for="node-input-equalTo20" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo20" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different20">
+                    <div class="columm">
+                        <label for="node-input-different20" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different20" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div  class="form-row columm " style=" margin-top: 20px;">
+            <label for="node-input-timeout20"><i class="fa fa-clock-o"></i> Timeout</label>
+            <div>
+                <input type="number" id="node-input-timeout20" placeholder="timeout" style="width:18%;">
+                <label for="node-input-timeout20"> ms</label>
+            </div>
+        </div>
+        <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select20"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select20" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to20">
+              <div class="columm">
+                <label for="node-input-equalTo20" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo20" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different20">
+                <div class="columm">
+                  <label for="node-input-different20" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different20" style=" width:250px !important ">
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="sendReceive21" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 21</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send21"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send21" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout21"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout21" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send21"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send21" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag21" style="width:5%;" checked>
+            <label for="node-input-flag21">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send21"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA21" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive21"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB21" style="width:70% !important">
+        </div>
+        
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select21"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select21" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to21">
+                    <div class="columm">
+                        <label for="node-input-equalTo21" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo21" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different21">
+                    <div class="columm">
+                        <label for="node-input-different21" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different21" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select21"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select21" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to21">
+              <div class="columm">
+                <label for="node-input-equalTo21" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo21" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different21">
+                <div class="columm">
+                  <label for="node-input-different21" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different21" style=" width:250px !important ">
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="sendReceive22" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 22</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send22"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send22" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout22"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout22" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send22"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send22" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag22" style="width:5%;" checked>
+            <label for="node-input-flag22">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send22"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA22" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive22"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB22" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select22"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select22" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to22">
+                    <div class="columm">
+                        <label for="node-input-equalTo22" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo22" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different22">
+                    <div class="columm">
+                        <label for="node-input-different22" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different22" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div  class="form-row columm " style=" margin-top: 20px;">
+            <label for="node-input-timeout22"><i class="fa fa-clock-o"></i> Timeout</label>
+            <div>
+                <input type="number" id="node-input-timeout22" placeholder="timeout" style="width:18%;">
+                <label for="node-input-timeout22"> ms</label>
+            </div>
+        </div>
+        <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select22"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select22" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to22">
+              <div class="columm">
+                <label for="node-input-equalTo22" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo22" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different22">
+                <div class="columm">
+                  <label for="node-input-different22" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different22" style=" width:250px !important ">
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="sendReceive23" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 23</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send23"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send23" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout23"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout23" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send23"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send23" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag23" style="width:5%;" checked>
+            <label for="node-input-flag23">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send23"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA23" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive23"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB23" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select23"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select23" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to23">
+                    <div class="columm">
+                        <label for="node-input-equalTo23" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo23" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different23">
+                    <div class="columm">
+                        <label for="node-input-different23" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different23" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div  class="form-row columm " style=" margin-top: 20px;">
+            <label for="node-input-timeout23"><i class="fa fa-clock-o"></i> Timeout</label>
+            <div>
+                <input type="number" id="node-input-timeout23" placeholder="timeout" style="width:18%;">
+                <label for="node-input-timeout23"> ms</label>
+            </div>
+        </div>
+        <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select23"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select23" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to23">
+              <div class="columm">
+                <label for="node-input-equalTo23" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo23" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different23">
+                <div class="columm">
+                  <label for="node-input-different23" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different23" style=" width:250px !important ">
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="sendReceive24" style="display: none;">
+        <div class="hr-div-receive">
+            <hr>
+            <span class="optional">Receive 24</span>
+            <hr>
+        </div> 
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label for="node-input-message_send24"><i class="fa fa-envelope"></i> Message</label>
+                <input type="text" id="node-input-message_send24" placeholder="message send" maxlength = "40" style="width:100%;">
+            </div>
+            <div  class="form-row columm-30 " style="padding-left: 10px;">
+                <label for="node-input-timeout24"><i class="fa fa-clock-o"></i> Timeout</label>
+                <div>
+                    <input type="number" id="node-input-timeout24" placeholder="timeout" style="width:80%; margin-right: 5px;">ms
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-row columm">
+            <label for="node-input-message_send24"><i class="fa fa-envelope"></i> Message</label>
+            <input type="text" id="node-input-message_send24" placeholder="message send" maxlength = "40">
+        </div> -->
+        <div class="form-row" style="display: flex;">
+            <input type="checkbox" id="node-input-flag24" style="width:5%;" checked>
+            <label for="node-input-flag24">Enable get-output</label>
+        </div>
+        <div class="form-row columm">
+            <label for="node-input-port_send24"><i class="fa fa-microchip"></i> Port send</label>
+            <input type="text" id="node-config-input-portA24" style="width:70% ">
+        </div>
+        <div class="form-row columm" style="margin-top:4%;">
+            <label for="node-input-port_receive24"><i class="fa fa-microchip"></i> Port receive</label>
+            <input type="text" id="node-config-input-portB24" style="width:70% !important">
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-50 " style=" margin-top: 8px;">
+                <label for="node-input-compare_select24"><i class="icon-tag"></i>Comparison Type:</label>
+                <select id="node-input-compare_select24" style="width: 140px;"  >
+                    <option value="equal">Equal to</option>
+                    <option value="different">Different of</option>
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+            <div class="form-row columm" style="display: flex; margin-top: 8px;">
+                <div class="node-input-equal-to24">
+                    <div class="columm">
+                        <label for="node-input-equalTo24" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+                        <input type="text" id="node-input-equalTo24" style=" width:220px !important ">
+                    </div>
+                </div>
+                <div class="node-input-different24">
+                    <div class="columm">
+                        <label for="node-input-different24" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                        <input type="text" id="node-input-different24" style=" width:220px !important ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div  class="form-row columm " style=" margin-top: 20px;">
+            <label for="node-input-timeout24"><i class="fa fa-clock-o"></i> Timeout</label>
+            <div>
+                <input type="number" id="node-input-timeout24" placeholder="timeout" style="width:18%;">
+                <label for="node-input-timeout24"> ms</label>
+            </div>
+        </div>
+        <div class="form-row columm " style=" margin-top: 8px;">
+            <label for="node-input-compare_select24"><i class="icon-tag"></i>Comparison Type:</label>
+            <select id="node-input-compare_select24" style="width: 140px;"  >
+                <option value="equal">Equal to</option>
+                <option value="different">Different of</option>
+                <option value="none" selected>None</option>
+            </select>
+          </div>
+          <div class="form-row columm" style="display: flex;">
+            <div class="node-input-equal-to24">
+              <div class="columm">
+                <label for="node-input-equalTo24" style="width: max-content; !important"><i class="icon-tag"></i>Equal To: </label>
+              <input type="text" id="node-input-equalTo24" style=" width:250px !important ">
+              </div>
+            </div>
+            <div class="node-input-different24">
+                <div class="columm">
+                  <label for="node-input-different24" style="width: max-content; !important"><i class="icon-tag"></i>Different of: </label>
+                <input type="text" id="node-input-different24" style=" width:250px !important ">
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <!-- <div class="hr-div-receive">
         <hr>
         <span class="optional">Optional</span>
         <hr>
-    </div>
+    </div> -->
 
-    <div class="form-row columm">
-        <label style="width: 50% !important;" for="node-input-name" ><i class="fa fa-tag"></i> Component Nickname</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
-    <!-- <label style="width: auto; margin-top: 8px;" for="node-input-exitTimeout"><i class="icon-tag"></i>Comparison timeout:</label>
-    <select id="node-input-exitTimeout" style="width: 20%" >
-        <option value="true">True</option>
-        <option value="false">False</option>
-        <option value="none" selected>None</option>
-    </select> -->
+    
 </script>
 
 <script type="text/html" data-help-name="send-receive">
