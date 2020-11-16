@@ -40,7 +40,7 @@ module.exports = function(RED) {
                 method: "save_values",
                 message_ref: self.extract_info_n[t],
                 message: "",
-                compare: {},
+                compare: { status:{ "==": true } },
                 get_output: {"message": "message_received"}
             }
 
@@ -150,7 +150,7 @@ module.exports = function(RED) {
                 method: "save_values",
                 message_ref: node.extract_info,
                 message: "",
-                compare: {},
+                compare: { status:{ "==": true } },
                 get_output: {"message": "message_received"}
             }
 
