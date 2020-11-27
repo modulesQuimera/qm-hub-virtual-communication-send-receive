@@ -212,75 +212,73 @@
                 newReceive.setAttribute("class", "sendReceive"+QTD); 
                 newReceive.setAttribute("style", show);
                 newReceive.innerHTML =  
-                "<div class='hr-div-receive'>" + 
-                    "<hr class='hr-new'>"+
-                        "<span class='optional'>Send-Receive "+POS+"</span>"+
-                    "<hr class='hr-new'>"+
-                "</div>"+
+                `<div class='hr-div-receive'> 
+                    <hr class='hr-new'> <span class='optional'>Send-Receive ${POS}</span><hr class='hr-new'>
+                </div>
 
-                "<div style=' position: relative; display:flex;'>"+
-                    "<div class='form-row columm-70'>"+
-                        "<label for='node-input-message_send"+QTD+"'><i class='fa fa-envelope'></i> Message</label>"+
-                        "<input type='text' id='node-input-message_send"+QTD+"' placeholder='message send' maxlength = '40' style='width:100%;'>"+
-                    "</div>"+
-                    "<div  class='form-row columm-30' style='padding-left: 10px;''>"+
-                        "<label for='node-input-timeout"+QTD+"'><i class='fa fa-clock-o'></i> Timeout</label>"+
-                        "<div>"+
-                            "<input type='number' id='node-input-timeout"+QTD+"' placeholder='timeout'  style='width:80%; margin-right: 5px;'>ms"+
-                        "</div>"+
-                    "</div>"+
-                "</div>"+
+                <div style=' position: relative; display:flex;'>
+                    <div class='form-row columm-70'>
+                        <label for='node-input-message_send${QTD}'><i class='fa fa-envelope'></i> Message</label>
+                        <input type='text' id='node-input-message_send${QTD}' placeholder='message send' style='width:100%;'>
+                    </div>
+                    <div  class='form-row columm-30' style='padding-left: 10px;'>
+                        <label for='node-input-timeout${QTD}'><i class='fa fa-clock-o'></i> Timeout</label>
+                        <div> 
+                            <input type='number' id='node-input-timeout${QTD}' placeholder='timeout'  style='width:80%; margin-right: 5px;'>ms
+                        </div> 
+                    </div> 
+                </div>
 
-                "<div class='form-row columm'>"+
-                    "<label for='node-input-port_send"+QTD+"'><i class='fa fa-microchip'></i> Port send</label>"+
-                    "<input type='text' id='node-config-input-port_send"+QTD+"' style='width:70%'>"+
-                "</div>"+
-                "<div class='form-row columm' style='margin-top:4%;'>"+
-                    "<label for='node-input-port_receive"+QTD+"'><i class='fa fa-microchip'></i> Port receive</label>"+
-                    "<input type='text' id='node-config-input-port_receive"+QTD+"' style='width:70% !important'>"+
-                "</div>"+
+                <div class='form-row columm'>
+                    <label for='node-input-port_send${QTD}'><i class='fa fa-microchip'></i> Port send</label>
+                    <input type='text' id='node-config-input-port_send${QTD}' style='width:70%'> 
+                </div>
+                <div class='form-row columm' style='margin-top:4%;'>
+                    <label for='node-input-port_receive${QTD}'><i class='fa fa-microchip'></i> Port receive</label>
+                    <input type='text' id='node-config-input-port_receive${QTD}' style='width:70% !important'>
+                </div>
 
-                "<div style=' position: relative; display:flex;'>"+
+                <div style=' position: relative; display:flex;'>
+                    <div class='form-row columm-50' style='margin-top: 8px;'>
+                        <label for='node-input-compare_select${QTD}'><i class='icon-tag'></i>Comparison Type:</label>
+                        <select class='compare_select' id='node-input-compare_select${QTD}' data-select='${QTD}' style='width: 140px;'>
+                            <option value='equal'>Equal to</option>
+                            <option value='different'>Different of</option>
+                            <option value='substr'>SubStr</option>
+                            <option value='none' selected>None</option> 
+                        </select> 
+                    </div>
+                    <div class='form-row columm' style='display: flex; margin-top: 8px;'>
+                        <div class='node-input-equal-to${QTD}'>
+                            <div class='columm'>
+                                <label for='node-input-equalTo${QTD}' style='width: max-content; !important'><i class='icon-tag'></i>Equal To: </label>
+                                <input type='text' id='node-input-equalTo${QTD}' style=' width:220px !important'>
+                            </div>
+                        </div>
 
-                    "<div class='form-row columm-50' style='margin-top: 8px;'>"+
-                        "<label for='node-input-compare_select"+QTD+"'><i class='icon-tag'></i>Comparison Type:</label>"+
-                        "<select class='compare_select' id='node-input-compare_select"+QTD+"' data-select='"+QTD+"' style='width: 140px;'>"+
-                            "<option value='equal'>Equal to</option>"+
-                            "<option value='different'>Different of</option>"+
-                            "<option value='substr'>SubStr</option>"+
-                            "<option value='none' selected>None</option>"+
-                        "</select>"+
-                    "</div>"+
+                        <div class='node-input-different${QTD}'>
+                            <div class='columm'>
+                                <label for='node-input-different${QTD}' style='width: max-content; !important'><i class='icon-tag'></i>Different of: </label>
+                                <input type='text' id='node-input-different${QTD}' style='width:220px !important'> 
+                            </div> 
+                        </div>
+                        
+                        <div class='node-input-substr${QTD}'>
+                            <div class='columm'>
+                                <label for='node-input-substr${QTD}' style='width: max-content; !important'><i class='icon-tag'></i>SubStr : </label>
+                                <input type='text' id='node-input-substr${QTD}' style=' width:220px !important '>
+                            </div> 
+                        </div> 
+                    </div> 
+                </div>
 
-                    "<div class='form-row columm' style='display: flex; margin-top: 8px;'>"+
-                        "<div class='node-input-equal-to"+QTD+"'>"+
-                            "<div class='columm'>"+
-                                "<label for='node-input-equalTo"+QTD+"' style='width: max-content; !important'><i class='icon-tag'></i>Equal To: </label>"+
-                                "<input type='text' id='node-input-equalTo"+QTD+"' style=' width:220px !important'>"+
-                            "</div>"+
-                        "</div>"+
-                        "<div class='node-input-different"+QTD+"'>"+
-                            "<div class='columm'>"+
-                                "<label for='node-input-different"+QTD+"' style='width: max-content; !important'><i class='icon-tag'></i>Different of: </label>"+
-                                "<input type='text' id='node-input-different"+QTD+"' style='width:220px !important'>"+
-                            "</div>"+
-                        "</div>"+
-                        "<div class='node-input-substr"+QTD+"'>"+
-                            "<div class='columm'>"+
-                                "<label for='node-input-substr"+QTD+"' style='width: max-content; !important'><i class='icon-tag'></i>SubStr : </label>"+
-                                "<input type='text' id='node-input-substr"+QTD+"' style=' width:220px !important '>"+
-                            "</div>"+
-                        "</div>"+
-                    "</div>"+
-                "</div>"+
-
-                "<div class='columm' style='display: flex;'>"+
-                    "<div class='form-row' style='margin-bottom: 4px;'>"+
-                        "<input type='checkbox' id='node-input-extract_flag"+QTD+"' class='extract_flags' data-flag='"+QTD+"' style='width: 3%;margin: 0;' autocomplete='off'>"+
-                        "<label for='node-input-extract_flag"+QTD+"' style='width: 22% !important; padding-left: 5px;user-select: none;'>Extract info</label>"+
-                    "</div>"+
-                    "<input type='text' id='node-input-extract_info"+QTD+"' class='extract_infos' autocomplete='off' dir=''>"+
-                "</div>"
+                <div class='columm' style='display: flex;'>
+                    <div class='form-row' style='margin-bottom: 4px;'>
+                        <input type='checkbox' id='node-input-extract_flag${QTD}' class='extract_flags' data-flag='${QTD}' style='width: 3%;margin: 0;' autocomplete='off'>
+                        <label for='node-input-extract_flag${QTD}' style='width: 22% !important; padding-left: 5px;user-select: none;'>Extract info</label>
+                    </div>
+                    <input type='text' id='node-input-extract_info${QTD}' class='extract_infos' autocomplete='off' dir=''>
+                </div>`
                 
                 document.getElementById("SendReceives").appendChild(newReceive);
             }
