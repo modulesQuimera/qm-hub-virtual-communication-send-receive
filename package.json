@@ -1,6 +1,6 @@
 {
   "name": "qm-virtual-communication-send-receive",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "virtual-communication send-receive module - Node-Red",
   "main": "send-receive.js",
   "scripts": {
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/modulesQuimera/qm-hub-virtual-communication-send-receive.git"
+    "url": "git+https://github.com/modulesQuimera/qm-virtual-communication-send-receive.git"
   },
   "keywords": ["quimera", "hub", "JIG"],
   "author": "HUB-LSE",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/modulesQuimera/qm-hub-virtual-communication-send-receive/issues"
+    "url": "https://github.com/modulesQuimera/qm-virtual-communication-send-receive/issues"
   },
-  "homepage": "https://github.com/modulesQuimera/qm-hub-virtual-communication-send-receive#readme",
+  "homepage": "https://github.com/modulesQuimera/qm-virtual-communication-send-receive#readme",
   "node-red": {
     "nodes": {
      "sendReceive": "send-receive.js"
